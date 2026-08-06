@@ -1,2 +1,0 @@
-# tele-bot
-nhat
