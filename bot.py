@@ -11,7 +11,7 @@ TOKEN = "8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Xin chào! Bot Telegram đã hoạt động 🤖"
+        "Xin chào!Tôi là đệ của Long Nhật đây"
     )
 
 
