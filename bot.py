@@ -15,7 +15,7 @@ TOKEN = "8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ"
 # Khi người dùng bấm /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Xin chào! Bạn cần gì ở tôi."
+        "Chào Bố Nhật."
     )
 
 
