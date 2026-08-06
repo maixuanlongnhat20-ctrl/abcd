@@ -30,8 +30,7 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply = "Long Nhật"
 
     elif "danh sách" in text.lower():
-        reply = " 100 like "
-                " 200 like "
+        reply = " 100 like ; 200 like "
 
     else:
         reply = f"Bạn vừa nói: {text}"
