@@ -1,6 +1,11 @@
+import asyncio
 from telegram import Update
-from telegram.ext import Application, CommandHandler, ContextTypes
-import os
+from telegram.ext import (
+    Application,
+    CommandHandler,
+    ContextTypes
+)
+
 TOKEN = "8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ"
 
 
@@ -10,15 +15,26 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
-def main():
+async def main():
     app = Application.builder().token(TOKEN).build()
 
-    app.add_handler(
-        CommandHandler("start", start)
-    )
+    # thêm lệnh /start
+    app.add_handler(CommandHandler("start", start))
 
-    app.run_polling()
+    await app.initialize()
+    await app.start()
+
+    await app.updater.start_polling()
+
+    print("Bot đang chạy...")
+
+    try:
+        await asyncio.Event().wait()
+    finally:
+        await app.updater.stop()
+        await app.stop()
+        await app.shutdown()
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
