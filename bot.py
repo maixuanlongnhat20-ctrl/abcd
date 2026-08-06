@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
-impotr os
+import os
 TOKEN = os.getenv("8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ")
 
 
