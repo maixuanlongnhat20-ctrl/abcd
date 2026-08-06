@@ -1,7 +1,8 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
-TOKEN ="8648003150:AAEM--pLAj2HymExV2_dqe6W1_PhJxHAonk"
+TOKEN ="Your token was replaced with a new one. You can use this token to access HTTP API:
+8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
