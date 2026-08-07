@@ -14,7 +14,7 @@ from telegram.ext import (
 # =====================
 
 TOKEN = "8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ"
-
+OWNER_ID = 123456789
 
 
 # Bật log để dễ sửa lỗi
@@ -76,7 +76,16 @@ async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # =====================
 # CHẠY BOT
 # =====================
-
+async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "📌 Danh sách lệnh:\n\n"
+        "/start - Khởi động bot\n"
+        "/admin - Thông tin admin\n"
+        "/xsmb - Xổ số miền Bắc\n"
+        "/xnhau - Link Xnhau\n"
+        "/help - Danh sách lệnh\n"
+        "/stop - Tắt bot (chỉ admin)"
+    )
 def main():
 
     app = (
