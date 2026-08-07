@@ -38,12 +38,10 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Chào bạn 👻\n"
-        "Bot đang hoạt động bình thường.\n\n"
-        "Gõ /help để xem lệnh."
     )
 async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "👑 Admin: Long Nhật"
+        " :👑Long Nhật"
     )
 async def get_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
