@@ -40,8 +40,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Chào bạn 👻\n"
     )    
 async def i_love_you(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "I Love Min Ngọt❤️"       
+    await update.message.reply_text("I Love You Min Ngọt❤️")       
     )
 async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
