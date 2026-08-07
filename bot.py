@@ -95,25 +95,25 @@ async def main():
         .build()
     )
 
-app.add_handler(CommandHandler("start", start))
-app.add_handler(CommandHandler("admin", admin))
-app.add_handler(CommandHandler("xsmb", xsmb))
-app.add_handler(CommandHandler("xnhau", xnhau))
-app.add_handler(CommandHandler("help", help_command))
-app.add_handler(CommandHandler("id", get_id))
-app.add_handler(CommandHandler("stop", stop))
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("admin", admin))
+    app.add_handler(CommandHandler("xsmb", xsmb))
+    app.add_handler(CommandHandler("xnhau", xnhau))
+    app.add_handler(CommandHandler("help", help_command))
+    app.add_handler(CommandHandler("id", get_id))
+    app.add_handler(CommandHandler("stop", stop))
 
     print("Bot đang chạy...")
 
-
     await app.initialize()
     await app.start()
+
     await app.updater.start_polling(
         drop_pending_updates=True
     )
 
-
     await asyncio.Event().wait()
+
 
 if __name__ == "__main__":
     asyncio.run(main())
