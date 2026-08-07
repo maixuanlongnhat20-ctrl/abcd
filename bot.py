@@ -84,37 +84,21 @@ async def main():
     )
 
 
-    # Đăng ký lệnh
-
-    app.add_handler(
-        CommandHandler("start", start)
-    )
-
-    app.add_handler(
-        CommandHandler("admin", admin)
-    )
-
-    app.add_handler(
-        CommandHandler("xsmb", xsmb)
-    )
-
-    app.add_handler(
-        CommandHandler("xnhau", xnhau)
-    )
-
-    app.add_handler(
-        CommandHandler("stop", stop)
-    )
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("admin", admin))
+    app.add_handler(CommandHandler("xsmb", xsmb))
+    app.add_handler(CommandHandler("xnhau", xnhau))
+    app.add_handler(CommandHandler("help", help_command))
+    app.add_handler(CommandHandler("stop", stop))
 
 
     print("Bot đang chạy...")
 
 
-    # Chạy polling
-    await app.run_polling(
+    app.run_polling(
         drop_pending_updates=True
     )
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
