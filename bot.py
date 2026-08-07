@@ -13,9 +13,9 @@ from telegram.ext import (
 # CẤU HÌNH
 # =====================
 
-TOKEN = "DÁN_TOKEN_MỚI_VÀO_ĐÂY"
+TOKEN = "8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ"
 
-OWNER_ID = 123456789  # thay bằng ID Telegram của bạn
+OWNER_ID = 
 
 
 # Bật log để dễ sửa lỗi
@@ -53,7 +53,11 @@ async def xnhau(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "https://xnhau.tech"
     )
 
-
+async def get_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        f"ID Telegram của bạn là: {update.effective_user.id}"
+    )
+    
 async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Chỉ chủ bot mới được tắt
