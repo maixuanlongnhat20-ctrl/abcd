@@ -37,7 +37,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
 # =====================
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Chào bạn 👻\n"
+        "Chào Đỗ Đức Đoàn\n"
     )    
 async def i_love_you(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("I Love You Min Ngọt❤️")       
