@@ -15,7 +15,7 @@ TOKEN = "8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ"
 # Khi người dùng bấm /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Chào Bố Nhật."
+        "chào bạn tôi có thể giúp gì."
     )
 
 
@@ -23,13 +23,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
 
-    if text.lower() == "name":
-        reply = "Mai Xuân Long Nhật"
+    if text.lower() == "/admin":
+        reply = "Long Nhật"
 
-    elif text.lower() == "alo":
-        reply = "chưa cài đặt"
+    elif text.lower() == "/xsmb":
+        reply = "https://xoso.com.vn/xo-so-mien-bac/xsmb-p1.html"
 
-    elif text.lower() == "xnhau":
+    elif text.lower() == "/xnhau":
         reply = " https://xnhau.tech "
 
     else:
