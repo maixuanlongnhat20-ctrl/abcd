@@ -97,6 +97,7 @@ def main():
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("stop", stop))
     app.add_handler(CommandHandler("restart", restart))
+    app.add_handler(CommandHandler("love", i_love_you))
     # Bắt lỗi
     app.add_error_handler(error_handler)
     logger.info("🤖 Bot đang chạy...")
