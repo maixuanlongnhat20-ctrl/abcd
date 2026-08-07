@@ -86,7 +86,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/help - Danh sách lệnh\n"
         "/stop - Tắt bot (chỉ admin)"
     )
-def main():
+async def main():
 
     app = (
         Application
@@ -102,12 +102,18 @@ def main():
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("stop", stop))
 
+
     print("Bot đang chạy...")
 
-    app.run_polling(
+
+    await app.initialize()
+    await app.start()
+    await app.updater.start_polling(
         drop_pending_updates=True
     )
 
 
+    await asyncio.Event().wait()
+
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
