@@ -14,7 +14,7 @@ from telegram.ext import (
 # =====================
 
 TOKEN = "8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ"
-OWNER_ID = 123456789
+OWNER_ID = 6821471310
 
 
 # Bật log để dễ sửa lỗi
@@ -100,7 +100,6 @@ async def main():
     app.add_handler(CommandHandler("xsmb", xsmb))
     app.add_handler(CommandHandler("xnhau", xnhau))
     app.add_handler(CommandHandler("help", help_command))
-    app.add_handler(CommandHandler("id", get_id))
     app.add_handler(CommandHandler("stop", stop))
 
     print("Bot đang chạy...")
