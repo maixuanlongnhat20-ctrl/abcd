@@ -15,7 +15,6 @@ from telegram.ext import (
 
 TOKEN = "8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ"
 
-OWNER_ID = 
 
 
 # Bật log để dễ sửa lỗi
