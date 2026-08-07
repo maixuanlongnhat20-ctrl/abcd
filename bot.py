@@ -46,16 +46,11 @@ async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Long Nhật"
     )
-async def get_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        f"🆔 ID Telegram của bạn:\n{update.effective_user.id}"
-    )
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "📌 DANH SÁCH LỆNH\n\n"
         "/start - Khởi động bot\n"
         "/admin - Thông tin admin\n"
-        "/get_id - Lấy ID Telegram\n"
         "/help - Danh sách lệnh\n"
         "/stop - Tắt bot (chỉ admin)\n"
         "/restart - Khởi động lại bot (chỉ admin)"
@@ -93,7 +88,6 @@ def main():
     # Lệnh
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("admin", admin))
-    app.add_handler(CommandHandler("get_id", get_id))
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("stop", stop))
     app.add_handler(CommandHandler("restart", restart))
