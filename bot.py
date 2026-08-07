@@ -29,7 +29,7 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif text.lower() == "alo":
         reply = "chưa cài đặt"
 
-    elif text.lower() == "xnhau"
+    elif text.lower() == "xnhau":
         reply = " https://xnhau.tech "
 
     else:
