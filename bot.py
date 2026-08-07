@@ -41,7 +41,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )    
  async def i_love_you(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Min Ngọt❤️\n"       
+        "I Love Min Ngọt❤️"       
     )
 async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
