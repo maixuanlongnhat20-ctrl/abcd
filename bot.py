@@ -23,13 +23,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
 
-    if text.lower() == "buff like":
-        reply = "Hiện tại tôi không thể hay đợi anh Long Nhật tạo ra"
+    if text.lower() == "name":
+        reply = "Mai Xuân Long Nhật"
 
     elif text.lower() == "alo":
         reply = "chưa cài đặt"
 
-    elif "/xnhau" in text.lower():
+    elif text.lower() == "xnhau"
         reply = " https://xnhau.tech "
 
     else:
