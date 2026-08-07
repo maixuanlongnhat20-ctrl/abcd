@@ -38,10 +38,14 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Chào bạn 👻\n"
+    )    
+ async def I Love You (update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "Minh Ngọt\n"       
     )
 async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        " :👑Long Nhật"
+        "Long Nhật"
     )
 async def get_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
