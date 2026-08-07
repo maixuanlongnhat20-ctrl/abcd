@@ -26,10 +26,10 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if text.lower() == "buff like":
         reply = "Hiện tại tôi không thể hay đợi anh Long Nhật tạo ra"
 
-    elif text.lower() == "menu":
+    elif text.lower() == "alo":
         reply = "chưa cài đặt"
 
-    elif "xnhau" in text.lower():
+    elif "/xnhau" in text.lower():
         reply = " https://xnhau.tech "
 
     else:
