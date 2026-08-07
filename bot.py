@@ -26,14 +26,14 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if text.lower() == "buff like":
         reply = "Hiện tại tôi không thể hay đợi anh Long Nhật tạo ra"
 
-    elif text.lower() == "Vua":
-        reply = "Long Nhật"
+    elif text.lower() == "/menu":
+        reply = "chưa cài đặt"
 
-    elif "danh sách" in text.lower():
-        reply = " 100 like ; 200 like "
+    elif "/xnhau" in text.lower():
+        reply = " https://xnhau.tech "
 
     else:
-        reply = f"Bạn vừa nói: {text}"
+        reply = f"Tôi không hiểu"
 
 
     await update.message.reply_text(reply)
