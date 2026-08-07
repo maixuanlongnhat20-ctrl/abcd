@@ -77,7 +77,7 @@ async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # CHẠY BOT
 # =====================
 
-async def main():
+def main():
 
     app = (
         Application
@@ -86,7 +86,6 @@ async def main():
         .build()
     )
 
-
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("admin", admin))
     app.add_handler(CommandHandler("xsmb", xsmb))
@@ -94,9 +93,7 @@ async def main():
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CommandHandler("stop", stop))
 
-
     print("Bot đang chạy...")
-
 
     app.run_polling(
         drop_pending_updates=True
