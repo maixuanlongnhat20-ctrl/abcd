@@ -1,70 +1,119 @@
 import asyncio
+import logging
 
 from telegram import Update
 from telegram.ext import (
     Application,
     CommandHandler,
-    MessageHandler,
-    ContextTypes,
-    filters
+    ContextTypes
 )
 
-TOKEN = "8648003150:AAGBzl-ZccCrXDrGHAkvzt7uj24A4RAS3rQ"
+
+# =====================
+# CẤU HÌNH
+# =====================
+
+TOKEN = "DÁN_TOKEN_MỚI_VÀO_ĐÂY"
+
+OWNER_ID = 123456789  # thay bằng ID Telegram của bạn
 
 
-# Khi người dùng bấm /start
+# Bật log để dễ sửa lỗi
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO
+)
+
+
+# =====================
+# CÁC LỆNH BOT
+# =====================
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "chào bạn tôi có thể giúp gì."
+        "Chào bạn 👋\n"
+        "Tôi có thể giúp gì cho bạn?"
     )
 
 
-# Bot đọc tin nhắn và trả lời
-async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text = update.message.text
-
-    if text.lower() == "/admin":
-        reply = "Long Nhật"
-
-    elif text.lower() == "/xsmb":
-        reply = "https://xoso.com.vn/xo-so-mien-bac/xsmb-p1.html"
-
-    elif text.lower() == "/xnhau":
-        reply = " https://xnhau.tech "
-
-    else:
-        reply = f"Tôi không hiểu"
+async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "Admin: Long Nhật"
+    )
 
 
-    await update.message.reply_text(reply)
+async def xsmb(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "https://xoso.com.vn/xo-so-mien-bac/xsmb-p1.html"
+    )
 
 
+async def xnhau(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "https://xnhau.tech"
+    )
+
+
+async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+    # Chỉ chủ bot mới được tắt
+    if update.effective_user.id != OWNER_ID:
+        await update.message.reply_text(
+            "Bạn không có quyền dùng lệnh này."
+        )
+        return
+
+    await update.message.reply_text(
+        "Bot đang tắt..."
+    )
+
+    await context.application.stop()
+
+
+# =====================
+# CHẠY BOT
+# =====================
 
 async def main():
 
-    app = Application.builder().token(TOKEN).build()
-
-
-    # Lệnh /start
-    app.add_handler(CommandHandler("start", start))
-
-
-    # Nhận tất cả tin nhắn văn bản
-    app.add_handler(
-        MessageHandler(filters.TEXT & ~filters.COMMAND, chat)
+    app = (
+        Application
+        .builder()
+        .token(TOKEN)
+        .build()
     )
 
 
-    await app.initialize()
-    await app.start()
+    # Đăng ký lệnh
 
-    await app.updater.start_polling()
+    app.add_handler(
+        CommandHandler("start", start)
+    )
+
+    app.add_handler(
+        CommandHandler("admin", admin)
+    )
+
+    app.add_handler(
+        CommandHandler("xsmb", xsmb)
+    )
+
+    app.add_handler(
+        CommandHandler("xnhau", xnhau)
+    )
+
+    app.add_handler(
+        CommandHandler("stop", stop)
+    )
+
 
     print("Bot đang chạy...")
 
 
-    await asyncio.Event().wait()
-
+    # Chạy polling
+    await app.run_polling(
+        drop_pending_updates=True
+    )
 
 
 if __name__ == "__main__":
